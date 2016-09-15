@@ -1,4 +1,4 @@
-// XXX: オブジェクトリテラルのキーの書き方を統一するために`quote-props`を有効にする
+// XXX: To uniform the style of an object literals, we enable `quote-props`
 /*eslint quote-props: [2, "always"] no-magic-numbers: 0 */
 
 'use strict';
@@ -9,18 +9,15 @@ module.exports = {
         'node',
     ],
 
-    // errorかwarnかの判断基準はこんな感じ:
-    //  * 「デバッグや開発の時にerrorになると邪魔だけど, 将来的に直す必要がある」ものはwarning
-    //  * 「アンチパターンだったり, 下手に使うと落とし穴を誘引するので, スタイルとして統一的に禁止しておきたい」ものはerror
+    // eslint-plugin-node
+    // https://github.com/mysticatea/eslint-plugin-node
     'rules': {
-        // eslint-plugin-node
-        // https://github.com/mysticatea/eslint-plugin-node
-        'node/no-missing-import': 0, // Node v5ではmodule syntaxは使えないので無効
-        'node/no-missing-require': 2, // Node v5では`require()`対象のファイルの実在確認はあった方が良いので有効
-        'node/no-unpublished-import': 0, // devDependenciesに明示してあってもerrorにされるのもあって今は見送り
-        'node/no-unpublished-require': 0, // devDependenciesに明示してあってもerrorにされるのもあって今は見送り
-        'node/no-unsupported-features': 0, // 'no-restricted-syntax'で対応してるので使ってない
-        'node/shebang': 0, // shebang付きで起動するパターンがないので使ってない
-        'node/no-deprecated-api': 2, //非推奨APIは使わない方向に倒すべきだと思うのでエラーにしてみる
+        'node/no-missing-import': 0, // Node v5 don't supprt module syntax
+        'node/no-missing-require': 2,
+        'node/no-unpublished-import': 0, // Disable until this rule follow devDependencies
+        'node/no-unpublished-require': 0, // Disable until this rule follow devDependencies
+        'node/no-unsupported-features': 0, // Covered by core's `no-restricted-syntax`
+        'node/shebang': 0, // we're not writing a stand alone script which requires shebang.
+        'node/no-deprecated-api': 2, // we'd like to detect the case of using deprecated apis.
     }
 };
