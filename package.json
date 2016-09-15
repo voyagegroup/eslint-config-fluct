@@ -1,0 +1,16 @@
+{
+  "name": "eslint-config-fluct",
+  "version": "0.0.0",
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/voyagegroup/eslint-config-fluct.git"
+  },
+  "bugs": {
+    "url": "https://github.com/voyagegroup/eslint-config-fluct/issues"
+  },
+  "homepage": "https://github.com/voyagegroup/eslint-config-fluct"
+}
