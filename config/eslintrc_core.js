@@ -1,5 +1,3 @@
-// import from https://github.com/voyagegroup/fluct_ms/blob/2913cec05c8561d306d85dabc74b0e5efd6fac03/client/tools/eslint/eslintrc_core.js
-
 // XXX: オブジェクトリテラルのキーの書き方を統一するために`quote-props`を有効にする
 /*eslint quote-props: [2, "always"] no-magic-numbers: 0 */
 

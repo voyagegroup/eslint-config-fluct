@@ -1,5 +1,3 @@
-// import from https://github.com/voyagegroup/fluct_ms/commit/d3855a0a2f30c01d95c713a400d582a7d4e485b7
-
 // XXX: オブジェクトリテラルのキーの書き方を統一するために`quote-props`を有効にする
 /*eslint quote-props: [2, "always"] no-magic-numbers: 0 */
 
