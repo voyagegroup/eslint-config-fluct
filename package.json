@@ -5,6 +5,10 @@
   "scripts": {
     "test": "eslint --ext .js ./"
   },
+  "engines": {
+    "node": "^6.3.0",
+    "npm": "^3.10.3"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/voyagegroup/eslint-config-fluct.git"
@@ -13,6 +17,11 @@
     "url": "https://github.com/voyagegroup/eslint-config-fluct/issues"
   },
   "homepage": "https://github.com/voyagegroup/eslint-config-fluct",
+  "peerDependencies": {
+    "eslint": "^3.5.0",
+    "eslint-plugin-node": "^2.0.0",
+    "eslint-plugin-react": "^6.2.2"
+  },
   "devDependencies": {
     "eslint": "^3.5.0"
   }
