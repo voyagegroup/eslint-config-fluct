@@ -5,6 +5,10 @@
   "scripts": {
     "test": "eslint --ext .js ./"
   },
+  "engines": {
+    "node": "^6.3.0",
+    "npm": "^3.10.3"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/voyagegroup/eslint-config-fluct.git"
