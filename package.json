@@ -1,7 +1,7 @@
 {
   "name": "eslint-config-fluct",
   "version": "0.0.0",
-  "description": "",
+  "description": "ESLint configurations that are used by fluct division of Voyage Group, Inc.",
   "scripts": {
     "test": "eslint --ext .js ./"
   },
