@@ -1,0 +1,5 @@
+# cache
+node_modules/
+
+# include as a lint target
+!.eslintrc.js
