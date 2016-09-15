@@ -12,7 +12,7 @@ module.exports = {
     // eslint-plugin-node
     // https://github.com/mysticatea/eslint-plugin-node
     'rules': {
-        'node/no-missing-import': 0, // Node v5 don't supprt module syntax
+        'node/no-missing-import': 2,
         'node/no-missing-require': 2,
         'node/no-unpublished-import': 0, // Disable until this rule follow devDependencies
         'node/no-unpublished-require': 0, // Disable until this rule follow devDependencies
