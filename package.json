@@ -21,11 +21,11 @@
   "peerDependencies": {
     "eslint": "^3.10.2",
     "eslint-plugin-node": "^3.0.3",
-    "eslint-plugin-react": "^6.4.0"
+    "eslint-plugin-react": "^6.7.1"
   },
   "devDependencies": {
     "eslint": "^3.10.2",
     "eslint-plugin-node": "^3.0.3",
-    "eslint-plugin-react": "^6.4.0"
+    "eslint-plugin-react": "^6.7.1"
   }
 }

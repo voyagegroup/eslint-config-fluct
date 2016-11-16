@@ -124,6 +124,11 @@ module.exports = {
         }],
         'react/jsx-sort-props': 0, // we cannot force alphabetical order to our old codebase, and this is meaningless.
         'react/jsx-space-before-closing': 0, // We don't this is a serious problem.
+        'react/jsx-tag-spacing': [1, {
+            'closingSlash': 'never',
+            'beforeSelfClosing': 'allow', // Allow to write more XML-ly
+            'afterOpening': 'never',
+        }],
         'react/jsx-uses-react': 1,
         'react/jsx-uses-vars': 1,
         'react/jsx-wrap-multilines': 2,
