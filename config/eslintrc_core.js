@@ -61,7 +61,7 @@ module.exports = {
         'accessor-pairs': 0, // Allow only getter or setter to define a "read-only" or "write-only" object
         'array-callback-return': 1, // http://eslint.org/docs/rules/array-callback-return.html
         'block-scoped-var': 2, // http://eslint.org/docs/rules/block-scoped-var
-        'class-methods-use-this': 1, // thisを使っていないインスタンスメソッドを警告する
+        'class-methods-use-this': 0, // A class method does not use `this` in some case.
         'complexity': 0, // 循環複雑度を日々のlintで継続して測る必要性がないと思う.
         'consistent-return': 2, // 関数内の複数のreturnがあった場合, すべてが値を返すか, 返さないかを一貫させる
         'curly': 2, // ブロックに対する波括弧の強制
