@@ -15,28 +15,28 @@ module.exports = {
         'no-control-regex': 2, // http://eslint.org/docs/rules/no-control-regex
         'no-debugger': 1, // debugger statement
         'no-dupe-args': 2, // http://eslint.org/docs/rules/no-dupe-args
-        'no-dupe-keys': 2, // オブジェクトリテラルでの重複キー
+        'no-dupe-keys': 2, // in an object literal.
         'no-duplicate-case': 2, // http://eslint.org/docs/rules/no-duplicate-case
         'no-empty': 2, // http://eslint.org/docs/rules/no-empty
         'no-empty-character-class': 2, // http://eslint.org/docs/rules/no-empty-character-class
-        'no-ex-assign': 2, // catch内でのeへの再代入
-        'no-extra-boolean-cast': 0, // `!!hoge`スタイルに依るbooleanへのキャストを禁止する. よく使うので許可.
-        'no-extra-parens': [0, 'all', { // 余計な括弧をつけても警告しない
+        'no-ex-assign': 2, // Ban to reassign to `e` of `catch (e) {}`
+        'no-extra-boolean-cast': 0, // Allow to cast to boolean with `!!bar`. This is common idiom.
+        'no-extra-parens': [0, 'all', { // We'd like to write extra parens for readability.
             'nestedBinaryExpressions': false,
         }],
-        'no-extra-semi': 1, // 不要なセミコロンの警告
-        'no-func-assign': 2, // function宣言への再代入
+        'no-extra-semi': 1,
+        'no-func-assign': 2,
         'no-inner-declarations': [2, 'functions'], // http://eslint.org/docs/rules/no-inner-declarations
         'no-invalid-regexp': 2, //http://eslint.org/docs/rules/no-invalid-regexp
         'no-irregular-whitespace': 2, // http://eslint.org/docs/rules/no-irregular-whitespace
         'no-obj-calls': 2, // http://eslint.org/docs/rules/no-obj-calls
         'no-regex-spaces': 2, // http://eslint.org/docs/rules/no-regex-spaces
-        'no-sparse-arrays': 2, // Arrayリテラルで`[,,]`のようなスタイル禁止
-        'no-unexpected-multiline': 1, //セミコロン忘れなどにより複数行に渡る式文が意図せぬ意味にとられるのを防ぐ
-        'no-unreachable': 1, // 未到達コードの警告
+        'no-sparse-arrays': 2, // Ban `[,,]`
+        'no-unexpected-multiline': 1,
+        'no-unreachable': 1,
         'no-unsafe-finally': 2, // http://eslint.org/docs/rules/no-unsafe-finally
         'no-unsafe-negation': 2, // http://eslint.org/docs/rules/no-unsafe-negation
-        'use-isnan': 2, // Number.isNaNを使いましょう
+        'use-isnan': 2, // Use `Number.isNaN`
         'valid-jsdoc': [2, {
             'requireReturn': true,
             'requireParamDescription': false,
@@ -48,7 +48,7 @@ module.exports = {
             //    'object': 'Object',
             //},
         }],
-        'valid-typeof': [1, {'requireStringLiterals': true}], // typeofの比較対象が妥当な型名か
+        'valid-typeof': [1, {'requireStringLiterals': true}],
 
         // Best Practices
         'accessor-pairs': 0, // Allow only getter or setter to define a "read-only" or "write-only" object
@@ -132,7 +132,7 @@ module.exports = {
         'yoda': 0, // http://eslint.org/docs/rules/wrap-iife
 
         // Strict Mode
-        'strict': [2, 'global'], // strict modeの強制
+        'strict': [2, 'global'],
 
         // Variables
         'init-declarations': [2, 'always'], // 変数宣言時の初期化を矯正する
