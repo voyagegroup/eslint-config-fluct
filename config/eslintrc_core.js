@@ -127,6 +127,7 @@ module.exports = {
         'no-useless-computed-key': 1, // 単に文字列で済むオブジェクトを、プロパティのキーにした場合に警告
         'no-useless-concat': 1, // 不要な文字列リテラルのconcatを警告する
         'no-useless-escape': 1, // 文字列リテラル中の不要なエスケープを警告する
+        'no-useless-return': 1, // see http://eslint.org/docs/rules/no-useless-return
         'no-useless-rename': 1, // import, export, destructuringによる同名の参照へのリネームを禁止
         'no-void': 2, // We live in after ES5 : http://eslint.org/docs/rules/no-void
         'no-warning-comments': 0, // We need not always enable this : http://eslint.org/docs/rules/no-warning-comments
@@ -198,7 +199,11 @@ module.exports = {
         'id-match': 0, // http://eslint.org/docs/rules/id-match
         'id-blacklist': 0, // http://eslint.org/docs/rules/id-blacklist
         'indent': [2, 4, {
-            'SwitchCase': 1
+            'SwitchCase': 1,
+            'MemberExpression': 1,
+            'CallExpression': {
+                'arguments': 'first',
+            },
         }],
         'jsx-quotes': [1, 'prefer-single'], // Sort with JavaScript.
         'keyword-spacing': [1, { // キーワードの前後にスペースを挟む
@@ -213,6 +218,9 @@ module.exports = {
         'max-depth': [2, 10], // http://eslint.org/docs/rules/max-depth
         'max-len': [2, 256, 4, { // http://eslint.org/docs/rules/max-len
             'ignoreUrls': true,
+            'ignoreStrings': true,
+            'ignoreTemplateLiterals': true,
+            'ignoreRegExpLiterals': true,
         }],
         'max-lines': 0, // あからさまにおかしいものは普通はコードレビューで落とす. http://eslint.org/docs/rules/max-lines
         'max-nested-callback': 0, // http://eslint.org/docs/rules/max-nested-callbacks
@@ -335,7 +343,6 @@ module.exports = {
         'prefer-const': [1, {
             'destructuring': 'any', // どれか一つでもconstにできるならconstにするぞ
         }],
-        'prefer-reflect': 1, // 有効にしているが, 実際に使うケースで邪魔なら無効化する
         'prefer-rest-params': 1, // `arguments`の参照ではなくrest parameterの使用を推奨する
         'prefer-spread': 1, // `Function.prototype.apply`よりもspread operatorの使用を推奨する
         'prefer-template': 0,
