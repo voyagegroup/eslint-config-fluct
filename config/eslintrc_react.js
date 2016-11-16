@@ -110,7 +110,7 @@ module.exports = {
         }],
         'react/jsx-no-comment-textnodes': 2,
         'react/jsx-no-duplicate-props': 2,
-        'react/jsx-no-literals': 0, // we cannot convert our codebase.
+        'react/jsx-no-literals': 1,
         'react/jsx-no-target-blank': 1, // see https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-no-target-blank.md
         'react/jsx-no-undef': 2,
         'react/jsx-pascal-case': [2, {
