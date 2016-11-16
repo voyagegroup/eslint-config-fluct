@@ -20,6 +20,7 @@ module.exports = {
         'node/no-unpublished-import': 0, // Disable until this rule follow devDependencies
         'node/no-unpublished-require': 0, // Disable until this rule follow devDependencies
         'node/no-unsupported-features': 0, // Covered by core's `no-restricted-syntax`
+        'node/process-exit-as-throw': 2, // sort with `consistent-return` rules.
         'node/shebang': 2,
     },
     /* eslint-disable sort-keys */
