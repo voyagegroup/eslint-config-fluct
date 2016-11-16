@@ -21,7 +21,9 @@
 - as npm package (TBD. see [#23](https://github.com/voyagegroup/eslint-config-fluct/issues/23))
 - Specify tar.gz to a dependency field in your package.json.
   - `"eslint-config-fluct": "https://github.com/voyagegroup/eslint-config-fluct/archive/<COMMIT_HASH>.tar.gz"`.
-  - Please replace `<COMMIT_HASH>` with `master`, tag name (e.g. `v1.2.3`), or an arbitary commit hash.
+  - Please replace `<COMMIT_HASH>` with tag name (e.g. `v1.2.3`), or an arbitary commit hash.
+    - You can specify `master` or other branch directly. But we don't recommend it strongly.
+
 
 ### 2. Import via `extends` fields in your .eslintrc
 
