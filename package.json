@@ -4,7 +4,7 @@
   "description": "ESLint configurations that are used by fluct division of VOYAGE GROUP, Inc.",
   "license": "MIT",
   "scripts": {
-    "test": "eslint --ext .js ./"
+    "test": "eslint --ext js,md ./"
   },
   "engines": {
     "node": ">6.9.1",
@@ -25,6 +25,7 @@
   },
   "devDependencies": {
     "eslint": "^3.10.2",
+    "eslint-plugin-markdown": "^1.0.0-beta.3",
     "eslint-plugin-node": "^3.0.3",
     "eslint-plugin-react": "^6.7.1"
   }
