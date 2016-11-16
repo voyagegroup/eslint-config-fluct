@@ -89,7 +89,7 @@ module.exports = {
         // JSX-specific rules
         'react/jsx-boolean-value': [2, 'always'], // Enforce to specify html's boolean type attribute.
         'react/jsx-closing-bracket-location': 0, // It doesn’t matter.
-        'react/jsx-curly-spacing': 0, // This is just stylistic issue.
+        'react/jsx-curly-spacing': 1,
         'react/jsx-first-prop-new-line': [1, 'never'],
         'react/jsx-filename-extension': [2, {
             'extensions': ['.jsx']
