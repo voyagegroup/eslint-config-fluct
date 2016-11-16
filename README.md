@@ -10,3 +10,9 @@
   but it's useful for debugging or you might write when trying an approach.
   - You can land a patch without fixing warning. But YOU should fix them.
 - We set rules as _off_ if it is just a stylistic problem and there are no increasing any productivity.
+
+
+## License
+
+- [The MIT License](./LICENSE.txt)
+  - Original: https://opensource.org/licenses/MIT
