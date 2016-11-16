@@ -26,7 +26,7 @@ module.exports = {
         'react/no-danger-with-children': 2,
         'react/no-did-mount-set-state': [1, 'disallow-in-func'],
         'react/no-did-update-set-state': [1, 'disallow-in-func'],
-        'react/no-direct-mutation-state': 1, // FIXME: this should be error.
+        'react/no-direct-mutation-state': 2,
         'react/no-find-dom-node': 2, // Disallow to use `ReactDOM.findDOMNode()`.
         'react/no-multi-comp': 0, // Enable to define a multiple component to a single file.
         'react/no-set-state': 1, // Recommend to use props instead of `setState()`.
