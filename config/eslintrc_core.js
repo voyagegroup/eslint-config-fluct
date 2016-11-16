@@ -174,7 +174,9 @@ module.exports = {
         'brace-style': [0, 'stroustrup', { // http://eslint.org/docs/rules/brace-style
             'allowSingleLine': true
         }],
-        'camelcase': 2, // CamelCaseか
+        'camelcase': [2, { // http://eslint.org/docs/rules/camelcase
+            'properties': 'always',
+        }],
         'comma-spacing': [2, { // http://eslint.org/docs/rules/comma-spacing
             'before': false,
             'after': true
@@ -191,14 +193,16 @@ module.exports = {
             },
         }],
         'computed-property-spacing': [2, 'never'],
-        'consistent-this': [2, 'that'], // `this`参照時の記法に一貫性を持たせる
-        'eol-last': [0, 'always'], // we don't have to restrict this.
-        'func-call-spacing': 2, // `fn ()`のような空白の禁止
+        'consistent-this': [2, 'that'],
+        'eol-last': [0, 'always'], // we don't have to restrict this. Use EditorConfig.
+        'func-call-spacing': 2,
         'func-name-matching': 1,
         'func-names': [0, 'as-needed'], // we don't have to restrict this in most case.
         'func-style': [0, 'declaration', {
+            // XXX: a top level functions should be a declaration,
+            // but it would be good to allow both forms of declaration/expression.
             'allowArrowFunctions': true,
-        }], // XXX: a top level functions should be a declaration, but it would be good to allow both forms of declaration/expression.
+        }],
         'id-length': 0, // http://eslint.org/docs/rules/id-length
         'id-match': 0, // http://eslint.org/docs/rules/id-match
         'id-blacklist': 0, // http://eslint.org/docs/rules/id-blacklist
@@ -210,15 +214,15 @@ module.exports = {
             },
         }],
         'jsx-quotes': [1, 'prefer-single'], // Sort with JavaScript.
-        'keyword-spacing': [1, { // キーワードの前後にスペースを挟む
+        'keyword-spacing': [1, {
             'before': true,
             'after': true,
         }],
-        'key-spacing': 0, // オブジェクトリテラルの際に, keyの後ろにスペースを許容しない
-        'linebreak-style': [2, 'unix'], // 改行コード
+        'key-spacing': 0, // http://eslint.org/docs/rules/key-spacing
+        'linebreak-style': [2, 'unix'],
         'lines-around-comment': 0, // http://eslint.org/docs/rules/lines-around-comment
-        'lines-around-directive': 2, // http://eslint.org/docs/rules/lines-around-directive 有効にしておく
-        'line-comment-position': 0, // http://eslint.org/docs/rules/line-comment-position 行コメントの位置は強制の必要ない
+        'lines-around-directive': 2, // http://eslint.org/docs/rules/lines-around-directive
+        'line-comment-position': 0, // This is needless. http://eslint.org/docs/rules/line-comment-position
         'max-depth': [2, 10], // http://eslint.org/docs/rules/max-depth
         'max-len': [2, 256, 4, { // http://eslint.org/docs/rules/max-len
             'ignoreUrls': true,
@@ -226,61 +230,59 @@ module.exports = {
             'ignoreTemplateLiterals': true,
             'ignoreRegExpLiterals': true,
         }],
-        'max-lines': 0, // あからさまにおかしいものは普通はコードレビューで落とす. http://eslint.org/docs/rules/max-lines
+        'max-lines': 0, // We trust our code review. http://eslint.org/docs/rules/max-lines
         'max-nested-callback': 0, // http://eslint.org/docs/rules/max-nested-callbacks
         'max-params': 0, // http://eslint.org/docs/rules/max-params
         'max-statements': 0, // http://eslint.org/docs/rules/max-statements
         'max-statements-per-line': [1, { // http://eslint.org/docs/rules/max-statements-per-line
-            'max': 1, // 基本的に, 1行に2以上のstatementを書くのはダメでしょ
+            'max': 1, // Basically, it's bad to place 2 statements into 1 line.
         }],
-        'multiline-ternary': 0, //三項演算子改行したほうが見やすいと思うが、改行されて無くても良いと思うので
-        'new-cap': 1, // コンストラクタ呼び出しの頭文字をUpper Caseに
-        'new-parens': 2, // コンストラクタ呼び出しに`()`を要求
+        'multiline-ternary': 0, // We don't have any strong opinion about this.
+        'new-cap': 1,
+        'new-parens': 2,
         'newline-after-var': 0, // http://eslint.org/docs/rules/newline-after-var
-        'newline-before-return' : 0, //returnの前の空行は別にいらないと思う。見難くなったら1にすればいいと思うので 今は0:無効
+        'newline-before-return' : 0, // It's not a problem to violate this.
         'newline-per-chained-call': [0, { // http://eslint.org/docs/rules/newline-per-chained-call
             'ignoreChainWithDepth': 4, // I don't feel this is a real problem at now...
         }],
-        'no-array-constructor': 2, // Arrayコンストラクタの使用禁止
-        'no-bitwise': [2, { // 普通bit演算子とか使わない...
+        'no-array-constructor': 2, // In almost case, we don't have to use it.
+        'no-bitwise': [2, { // In almost case, we don't use bitwise operators...
             'allow': [],
-            'int32Hint': true, // `a|0`でint32として取り扱わせるっていう最適化技法は許容する
+            'int32Hint': true, // http://eslint.org/docs/rules/no-bitwise
         }],
         'no-continue': 0, // http://eslint.org/docs/rules/no-continue
         'no-inline-comments': 0, // http://eslint.org/docs/rules/no-inline-comments
         'no-lonely-if': 1, // http://eslint.org/docs/rules/no-lonely-if
         'no-mixed-operators': 2, // http://eslint.org/docs/rules/no-mixed-operators
-        'no-mixed-spaces-and-tabs': 2, // スペースとタブの混在禁止
+        'no-mixed-spaces-and-tabs': 2,
         'no-multiple-empty-lines': 0, // Empty lines somtimes means a section of a program.
         'no-negated-condition': 0, // http://eslint.org/docs/rules/no-negated-condition
         'no-nested-ternary': 2, // http://eslint.org/docs/rules/no-nested-ternary
-        'no-new-object': 2, // `new Object()`の禁止
-        'no-plusplus': 0, // 使うことだってある.
-        'no-restricted-globals' : [2,
-            //指定したグローバル変数を利用すると警告する(一般的すぎる名前を付けて意図しないグローバル変数の上書きをしないように)。必要に応じて追加していく。
-            // 現状上げたのはここから http://qiita.com/mysticatea/items/cae686a8bebdfaaa5735
+        'no-new-object': 2, // In almost case, we don't have to use it.
+        'no-plusplus': 0, // We might use it for loop.
+        'no-restricted-globals' : [2, // http://eslint.org/docs/rules/no-restricted-globals
             'name', 'top', 'event'
         ],
         'no-restricted-syntax': [2,
-            // - 文字列リフレクションの温床となりうるfor-inをBAN（使いたい場合は明示的に無効化しましょう）
+            // Ban the way to reflection by strings (Enable explicitly if you'd like to use).
             'ForInStatement'
         ],
-        'no-restricted-properties': 0, // http://eslint.org/docs/rules/no-restricted-properties 特定のプロパティアクセスを禁止にする必要はない
+        'no-restricted-properties': 0, // http://eslint.org/docs/rules/no-restricted-properties
         'no-ternary': 0, // http://eslint.org/docs/rules/no-ternary
-        'no-trailing-spaces': 1, // 行末の空白を警告する
-        'no-template-curly-in-string': 2, // 通常の文字列の中に、テンプレート リテラルの埋め込み式を書くと警告
-        'no-underscore-dangle': [2, { // `_`から始まる名前の禁止
-            'allowAfterThis': true, // private memberの作れるように, `this`の直後に関しては許容する
+        'no-trailing-spaces': 1,
+        'no-template-curly-in-string': 2,
+        'no-underscore-dangle': [2, { // Ban the name which starts with `_`.
+            'allowAfterThis': true, // allow after this to create a private member.
         }],
-        'no-unneeded-ternary': 2, // 真偽値をそのまま返せば良いところで三項演算子を使ってはいないか
-        'no-whitespace-before-property': 2, // プロパティアクセス時に変な空白の入れ方を禁止する
+        'no-unneeded-ternary': 2,
+        'no-whitespace-before-property': 2,
         'object-curly-spacing': 0, // http://eslint.org/docs/rules/object-curly-spacing
-        'object-curly-newline': 0, // こんなのcase by case. http://eslint.org/docs/rules/object-curly-newline
+        'object-curly-newline': 0, // Just case by case! http://eslint.org/docs/rules/object-curly-newline
         'one-var': [2, 'never'], // http://eslint.org/docs/rules/one-var
         'one-var-declaration-per-line': 1, // http://eslint.org/docs/rules/one-var-declaration-per-line
-        'operator-linebreak': [2, 'after'], // 改行時, 演算子が行末になるようにする
+        'operator-linebreak': [2, 'after'],
         'padded-blocks': 0,
-        'prefer-numeric-literals': 2, // http://eslint.org/docs/rules/prefer-numeric-literals parseInt による2進数・8進数・16進数の定数値を警告(数値リテラルを使う)
+        'prefer-numeric-literals': 2, // http://eslint.org/docs/rules/prefer-numeric-literals
         'quotes': [2, 'single', {
             'avoidEscape': true,
             'allowTemplateLiterals': true,
@@ -305,8 +307,8 @@ module.exports = {
             'asyncArrow': 'ignore',
         }],
         'space-in-parens': 0,
-        'space-infix-ops': 1, // 演算子の前後にスペースを挟む
-        'space-unary-ops': [1, { // 演算子の前後にスペースを要求するか
+        'space-infix-ops': 1,
+        'space-unary-ops': [1, {
             'words': true, // It's more readable for keywords.
             'nonwords': false, // It's very tired to enforce before/after of `++`/`--`.
         }],
