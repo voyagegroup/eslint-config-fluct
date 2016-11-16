@@ -55,28 +55,28 @@ module.exports = {
         'array-callback-return': 1, // http://eslint.org/docs/rules/array-callback-return.html
         'block-scoped-var': 2, // http://eslint.org/docs/rules/block-scoped-var
         'class-methods-use-this': 0, // A class method does not use `this` in some case.
-        'complexity': 0, // 循環複雑度を日々のlintで継続して測る必要性がないと思う.
-        'consistent-return': 2, // 関数内の複数のreturnがあった場合, すべてが値を返すか, 返さないかを一貫させる
-        'curly': 2, // ブロックに対する波括弧の強制
-        'default-case': 0, // `default`が無い`switch`文, そういうのもあるよね.
-        'dot-location': 0, // `.`が行頭か行末かなんて, どっちでもいいので今のところ気にしない
-        'dot-notation': 2, // `obj[key]`のようなアクセスを禁止
-        'eqeqeq': [2, 'always'], // 厳密比較以外の禁止
-        'guard-for-in': 0, // `for-in`でprototype全部列挙したいこともある.
-        'no-alert': 1, // デバッグ時に使うこともあるので警告に留める
-        'no-caller': 2, // arguments.caller, arguments.calleeの禁止
-        'no-case-declarations': 2, // switch-case文内でのブロックなし変数定義を禁止する
-        'no-div-regex': 2, // 間違えやすいので縛る. http://eslint.org/docs/rules/no-div-regex
-        'no-empty-function': 0, // XXX: 変数の型を安定させる都合で空の関数をasssignしたいときだってあるので普段は許容.
-        'no-empty-pattern': 2, // 分割代入時に何も取り出さないようなミスを避ける
-        'no-else-return': 0, // どちらか一方に分岐するのを明示したくて`else`を使うこともある.
-        'no-eq-null': 2, // nullと比較するときは厳密比較を強制する
-        'no-eval': 2, // eval禁止
-        'no-extend-native': 2, // ライブラリ以外で使うことなし
+        'complexity': 0, // We think there is no meaning to measure it in a daily linting.
+        'consistent-return': 2,
+        'curly': 2, // It's possible error to allow this.
+        'default-case': 0, // This is not a problem.
+        'dot-location': 0, // This is just a stylistic issue.
+        'dot-notation': 2, // We hate reflection by strings. It's possible error.
+        'eqeqeq': [2, 'always'], // Don't use loosely equality operator.
+        'guard-for-in': 0, // This is an escape hatch to enumerate all members in prototype chain.
+        'no-alert': 1, // for debugging.
+        'no-caller': 2, // Don't touch `arguments` in a normal code.
+        'no-case-declarations': 2, // http://eslint.org/docs/rules/no-case-declarations
+        'no-div-regex': 2, // http://eslint.org/docs/rules/no-div-regex
+        'no-empty-function': 0, // Allow to set a no-op function.
+        'no-empty-pattern': 2,
+        'no-else-return': 0, // `else` branch sometimes means "A or B" explicitly.
+        'no-eq-null': 2, // Sort with `eqeqeq`. We might disable this for Flowtype's semantics for the future.
+        'no-eval': 2,
+        'no-extend-native': 2, // We don't do this in non-library code.
         'no-extra-bind': 1, // http://eslint.org/docs/rules/no-extra-bind
         'no-extra-label': 2, // http://eslint.org/docs/rules/no-extra-label
-        'no-fallthrough': 1, // switch内のcaseごとのbreakまたはreturnの強制
-        'no-floating-decimal': 0, // `0.1`と`.1`の混在くらい見逃してやろう.
+        'no-fallthrough': 1,
+        'no-floating-decimal': 0, // Allow `0.1` and `.1` in same project.
         'no-global-assign': 2, // http://eslint.org/docs/rules/no-global-assign
         'no-implicit-coercion': [2, { // http://eslint.org/docs/rules/no-implicit-coercion
             'boolean': true,
@@ -84,50 +84,51 @@ module.exports = {
             'string': true,
             'allow': ['!!', '+'], // Allow only these patterns.
         }],
-        'no-implicit-globals': 2, // 暗黙のグローバル変数の生成の禁止
-        'no-implied-eval': 2, // 暗黙のevalの禁止
-        'no-invalid-this': 1, // `undefined`となりうる`this`を検知する
+        'no-implicit-globals': 2,
+        'no-implied-eval': 2,
+        'no-invalid-this': 1,
         'no-iterator': 2, // Ban the legacy JavaScript syntax
         'no-labels': 2, // Using a label is a rare case
         'no-lone-blocks': 1, // http://eslint.org/docs/rules/no-lone-blocks
         'no-loop-func': 2, // http://eslint.org/docs/rules/no-loop-func
-        'no-magic-numbers': [1, { // マジックナンバーは良くないので一旦変数として名前付けしてから使うのを推奨する
-            'ignore': [0, 1], // これらの値はよく使うことがあるので（テスト, フラグ値）許容する.
+        'no-magic-numbers': [1, {
+            // Allow these values which are used commonly in test, flags, or others.
+            'ignore': [0, 1],
         }],
         'no-multi-spaces': 1, // http://eslint.org/docs/rules/no-multi-spaces
         'no-multi-str': 0, // http://eslint.org/docs/rules/no-multi-str
-        'no-new': 1, // 変数への代入の無い`new`に警告
-        'no-new-func': 1, // `new Function()`の警告（最適化テクニックとしての使用を考慮して禁止しない）
-        'no-new-wrappers': 1, // 大抵, このルールで縛られるオブジェクトをnewすることはない. http://eslint.org/docs/rules/no-new-wrappers
-        'no-octal': 2, // 間違えやすいので禁止
+        'no-new': 1,
+        'no-new-func': 1, // Just an escape hatch for optimizing technique.
+        'no-new-wrappers': 1, // We don't have to `new` to cast a value. http://eslint.org/docs/rules/no-new-wrappers
+        'no-octal': 2,
         'no-octal-escape': 2, // http://eslint.org/docs/rules/no-octal-escape
         'no-param-reassign': [1, {
             'props': true
-        }], // 仮引数への再代入
-        'no-proto': 2, // `__proto__`の拡張禁止
+        }],
+        'no-proto': 2,
         'no-prototype-builtins': 2, // http://eslint.org/docs/rules/no-prototype-builtins
-        'no-redeclare': 2, // 同名の変数の再宣言を禁止
-        'no-return-assign': 2, // return文中での代入禁止
+        'no-redeclare': 2,
+        'no-return-assign': 2, // This is a problem for readability.
         'no-return-await': 1, // Warn. Because this is not a serious problem which is same degree with `no-return-assign`.
-        'no-script-url': 2, // `javascript:`の使用を禁止
+        'no-script-url': 2, // Use an event handler.
         'no-self-assign': 2, // http://eslint.org/docs/rules/no-self-assign
-        'no-self-compare': 2, //http://eslint.org/docs/rules/no-self-compare
+        'no-self-compare': 2, // http://eslint.org/docs/rules/no-self-compare
         'no-sequences': 2, // We're not doing a code golf: http://eslint.org/docs/rules/no-sequences
-        'no-throw-literal': 2, // `Error`以外のthrowを禁止
-        'no-unmodified-loop-condition': 1, // ループ条件が変更されず無限ループになりうる状態を検知
-        'no-unused-expressions': 2, // 間違いの元なので禁止. http://eslint.org/docs/rules/no-unused-expressions
+        'no-throw-literal': 2,
+        'no-unmodified-loop-condition': 1,
+        'no-unused-expressions': 2, // http://eslint.org/docs/rules/no-unused-expressions
         'no-unused-labels': 2, // http://eslint.org/docs/rules/no-unused-labels
-        'no-useless-call': 1, // 不要な`Function.prototype.apply/call`を警告する
-        'no-useless-computed-key': 1, // 単に文字列で済むオブジェクトを、プロパティのキーにした場合に警告
-        'no-useless-concat': 1, // 不要な文字列リテラルのconcatを警告する
-        'no-useless-escape': 1, // 文字列リテラル中の不要なエスケープを警告する
-        'no-useless-return': 1, // see http://eslint.org/docs/rules/no-useless-return
-        'no-useless-rename': 1, // import, export, destructuringによる同名の参照へのリネームを禁止
+        'no-useless-call': 1,
+        'no-useless-computed-key': 1,
+        'no-useless-concat': 1,
+        'no-useless-escape': 1,
+        'no-useless-return': 1, // http://eslint.org/docs/rules/no-useless-return
+        'no-useless-rename': 1,
         'no-void': 2, // We live in after ES5 : http://eslint.org/docs/rules/no-void
         'no-warning-comments': 0, // We need not always enable this : http://eslint.org/docs/rules/no-warning-comments
-        'no-with': 2, // with禁止
-        'radix': 2, // `parseInt()`の第2引数を強制する
-        'vars-on-top': 0, // こんなバカバカしい習慣に従う必要は無い: http://eslint.org/docs/rules/vars-on-top
+        'no-with': 2,
+        'radix': 2, // Enforce 2nd argument of `parseInt()`.
+        'vars-on-top': 0, // This is a truly ridiculous convention.
         'wrap-iife': 0, // http://eslint.org/docs/rules/wrap-iife
         'yoda': 0, // http://eslint.org/docs/rules/wrap-iife
 
