@@ -20,7 +20,7 @@ module.exports = {
     'rules': {
         'react/display-name': 0, // Auto covered by jsx transformer.
         'react/forbid-component-props': 1,
-        'react/no-danger': 0, // ban `dangerouslySetInnerHTML`. But we still use it :(
+        'react/no-danger': 2,
         'react/no-danger-with-children': 2,
         'react/no-did-mount-set-state': [1, 'disallow-in-func'],
         'react/no-did-update-set-state': [1, 'disallow-in-func'],
@@ -37,7 +37,7 @@ module.exports = {
         'react/no-is-mounted': 2,
         'react/no-render-return-value': 2,
         'react/no-string-refs': 2,
-        'react/prefer-es6-class': 1, // Prefer ES6 class inheritance style.
+        'react/prefer-es6-class': 2,
         'react/prefer-stateless-function': [1, {
             'ignorePureComponents': false, // we'll reconsider this option when we begin to use `PureComponent`.
         }],
@@ -89,8 +89,8 @@ module.exports = {
         // JSX-specific rules
         'react/jsx-boolean-value': [2, 'always'], // Enforce to specify html's boolean type attribute.
         'react/jsx-closing-bracket-location': 0, // It doesn’t matter.
-        'react/jsx-curly-spacing': 0, // This is just stylistic issue.
-        'react/jsx-first-prop-new-line': 0, // This is just stylistic issue.
+        'react/jsx-curly-spacing': 1,
+        'react/jsx-first-prop-new-line': [1, 'never'],
         'react/jsx-filename-extension': [2, {
             'extensions': ['.jsx']
         }],
@@ -100,7 +100,7 @@ module.exports = {
             'eventHandlerPropPrefix': 'on',
         }],
         'react/jsx-indent-props': 0, // we cannot force alphabetical order to our old codebase, and this is not any serious problem.
-        'react/jsx-indent': 1,
+        'react/jsx-indent': [1, 4], // Sort with core's `indent` rule.
         'react/jsx-key': 1,
         'react/jsx-max-props-per-line': 0, // we don't think this is serious problem.
         'react/jsx-no-bind': [2, { // Sort to bind with this in constructor.
@@ -110,7 +110,7 @@ module.exports = {
         }],
         'react/jsx-no-comment-textnodes': 2,
         'react/jsx-no-duplicate-props': 2,
-        'react/jsx-no-literals': 0, // we cannot convert our codebase.
+        'react/jsx-no-literals': 1,
         'react/jsx-no-target-blank': 1, // see https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-no-target-blank.md
         'react/jsx-no-undef': 2,
         'react/jsx-pascal-case': [2, {
