@@ -17,7 +17,7 @@ module.exports = {
         'node/no-unpublished-import': 0, // Disable until this rule follow devDependencies
         'node/no-unpublished-require': 0, // Disable until this rule follow devDependencies
         'node/no-unsupported-features': 0, // Covered by core's `no-restricted-syntax`
-        'node/shebang': 0, // we're not writing a stand alone script which requires shebang.
+        'node/shebang': 2,
         'node/no-deprecated-api': 2, // we'd like to detect the case of using deprecated apis.
     }
 };
