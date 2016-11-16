@@ -100,7 +100,7 @@ module.exports = {
             'eventHandlerPropPrefix': 'on',
         }],
         'react/jsx-indent-props': 0, // we cannot force alphabetical order to our old codebase, and this is not any serious problem.
-        'react/jsx-indent': 1,
+        'react/jsx-indent': [1, 4], // Sort with core's `indent` rule.
         'react/jsx-key': 1,
         'react/jsx-max-props-per-line': 0, // we don't think this is serious problem.
         'react/jsx-no-bind': [2, { // Sort to bind with this in constructor.
