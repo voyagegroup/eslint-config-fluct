@@ -12,6 +12,8 @@
   but it's useful for debugging or you might write when trying an approach.
   - You can land a patch without fixing warning. But YOU should fix them.
 - We set rules as _off_ if it is just a stylistic problem and there are no increasing any productivity.
+- This rule set treats ECMA262 6th (ECMA2015) or later one as Tier 1 state.
+  If you use this rules in ~ES5 environment, you may need to set some options.
 
 
 ## How To Use
