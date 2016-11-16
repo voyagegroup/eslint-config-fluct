@@ -273,6 +273,7 @@ module.exports = {
             'allowAfterThis': true, // private memberの作れるように, `this`の直後に関しては許容する
         }],
         'no-unneeded-ternary': 2, // 真偽値をそのまま返せば良いところで三項演算子を使ってはいないか
+        'no-whitespace-before-property': 2, // プロパティアクセス時に変な空白の入れ方を禁止する
         'object-curly-spacing': 0, // http://eslint.org/docs/rules/object-curly-spacing
         'object-curly-newline': 0, // こんなのcase by case. http://eslint.org/docs/rules/object-curly-newline
         'one-var': [2, 'never'], // http://eslint.org/docs/rules/one-var
@@ -315,19 +316,19 @@ module.exports = {
         'wrap-regex': 0,
 
         // ECMASctipt 6
-        'arrow-body-style': 0, // arrow functionのbodyのスタイルについて（see: #1700）
-        'arrow-parens': 2, // arrow functionの引数のカッコを必須にする
-        'arrow-spacing': [1, { // arrow functionのarrow (=>)の前後に空白を開ける
+        'arrow-body-style': 0, // This is just a stylistic issue.
+        'arrow-parens': 2, // requires parens for arrow function.
+        'arrow-spacing': [1, { // requires space before/after for `=>` of arrow func.
             'before': true,
             'after': true
         }],
-        'constructor-super': 2, // 派生クラスのコンストラクタでは必ずsuperが呼ばれているか確かめる
+        'constructor-super': 2, // check calling `super()` in a derived class.
         'generator-star-spacing': [2, {
             'before': false,
             'after': true
         }],
-        'no-class-assign': 2, // class宣言で定義された変数への代入を禁止
-        'no-confusing-arrow': [1, { // arrow functionか不等号かややこしいのを検知
+        'no-class-assign': 2, // Ban to assign the same name of class declaration.
+        'no-confusing-arrow': [1, { // Detect confusing arrow func (`=>`) or "great/less than or equal operator" (`>=`, `<=`)
             'allowParens': true,
         }],
         'no-const-assign': 2, // http://eslint.org/docs/rules/no-const-assign
@@ -339,23 +340,22 @@ module.exports = {
         'no-useless-constructor': 0, // This is a stylistic issue.
         'no-var': 1,
         'no-tabs': 2,
-        'no-whitespace-before-property': 2, // プロパティアクセス時に変な空白の入れ方を禁止する
         'object-shorthand': 0,
         'prefer-arrow-callback': [0, {
             'allowNamedFunctions': true, // for debugging stack trace
-            'allowUnboundThis': false, // callback内で、bind等無しにはthisを使えなくする
+            'allowUnboundThis': false, // if `true`, ban using `this` without `bind()` in the callback.
         }],
         'prefer-const': [1, {
-            'destructuring': 'any', // どれか一つでもconstにできるならconstにするぞ
+            'destructuring': 'any', // Let's use `const` if we make one of variables `const`.
         }],
-        'prefer-rest-params': 1, // `arguments`の参照ではなくrest parameterの使用を推奨する
-        'prefer-spread': 1, // `Function.prototype.apply`よりもspread operatorの使用を推奨する
+        'prefer-rest-params': 1, // Recommend to use rest parameter instead of `arguments`.
+        'prefer-spread': 1, // Recommend to use spread operator instead of `Function.prototype.apply`.
         'prefer-template': 0,
-        'require-yield': 2, // generator関数内にyieldが無いと警告する
+        'require-yield': 2, // Detect missing `yield` in a generator function.
         'rest-spread-spacing': [2, 'never'], // clarify 'this is rest/spread operator'.
-        'symbol-description': 2, // Symbol()にdescriptionを渡すことを強制する
+        'symbol-description': 2, // Force to pass the description to `Symbol()`.
         'template-curly-spacing': [1, 'never'], // http://eslint.org/docs/rules/template-curly-spacing
         'yield-star-spacing': [1, 'after'], // http://eslint.org/docs/rules/%20yield-star-spacing.html
-        'object-property-newline' : 0 // 一行に複数のプロパティがあってもいいと思うので無効
+        'object-property-newline' : 0 // Disable to allow many properties into single line.
     }
 };
