@@ -19,12 +19,12 @@
   },
   "homepage": "https://github.com/voyagegroup/eslint-config-fluct",
   "peerDependencies": {
-    "eslint": "^3.5.0",
+    "eslint": "^3.10.2",
     "eslint-plugin-node": "^3.0.3",
     "eslint-plugin-react": "^6.2.2"
   },
   "devDependencies": {
-    "eslint": "^3.5.0",
+    "eslint": "^3.10.2",
     "eslint-plugin-node": "^3.0.3",
     "eslint-plugin-react": "^6.2.2"
   }

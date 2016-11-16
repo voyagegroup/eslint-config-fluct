@@ -115,6 +115,7 @@ module.exports = {
         'no-prototype-builtins': 2, // http://eslint.org/docs/rules/no-prototype-builtins
         'no-redeclare': 2, // 同名の変数の再宣言を禁止
         'no-return-assign': 2, // return文中での代入禁止
+        'no-return-await': 1, // Warn. Because this is not a serious problem which is same degree with `no-return-assign`.
         'no-script-url': 2, // `javascript:`の使用を禁止
         'no-self-assign': 2, // http://eslint.org/docs/rules/no-self-assign
         'no-self-compare': 2, //http://eslint.org/docs/rules/no-self-compare
@@ -127,6 +128,7 @@ module.exports = {
         'no-useless-computed-key': 1, // 単に文字列で済むオブジェクトを、プロパティのキーにした場合に警告
         'no-useless-concat': 1, // 不要な文字列リテラルのconcatを警告する
         'no-useless-escape': 1, // 文字列リテラル中の不要なエスケープを警告する
+        'no-useless-return': 1, // see http://eslint.org/docs/rules/no-useless-return
         'no-useless-rename': 1, // import, export, destructuringによる同名の参照へのリネームを禁止
         'no-void': 2, // We live in after ES5 : http://eslint.org/docs/rules/no-void
         'no-warning-comments': 0, // We need not always enable this : http://eslint.org/docs/rules/no-warning-comments
@@ -184,12 +186,23 @@ module.exports = {
             'before': false,
             'after': true
         }],
-        'comma-style': [1, 'last'], // http://eslint.org/docs/rules/comma-style
+        'comma-style': [1, 'last', {// http://eslint.org/docs/rules/comma-style
+            'exceptions': {
+                'ArrayPattern': false,
+                'ArrowFunctionExpression': false,
+                'CallExpression': false,
+                'FunctionDeclaration': false,
+                'FunctionExpression': false,
+                'ImportDeclaration': false,
+                'ObjectPattern': false,
+            },
+        }],
         'computed-property-spacing': [2, 'never'],
         'consistent-this': [2, 'that'], // `this`参照時の記法に一貫性を持たせる
-        'eol-last': 0, // we don't have to restrict this.
+        'eol-last': [0, 'always'], // we don't have to restrict this.
         'func-call-spacing': 2, // `fn ()`のような空白の禁止
-        'func-names': 0, // we don't have to restrict this in most case.
+        'func-name-matching': 1,
+        'func-names': [0, 'as-needed'], // we don't have to restrict this in most case.
         'func-style': [0, 'declaration', {
             'allowArrowFunctions': true,
         }], // XXX: a top level functions should be a declaration, but it would be good to allow both forms of declaration/expression.
@@ -197,7 +210,11 @@ module.exports = {
         'id-match': 0, // http://eslint.org/docs/rules/id-match
         'id-blacklist': 0, // http://eslint.org/docs/rules/id-blacklist
         'indent': [2, 4, {
-            'SwitchCase': 1
+            'SwitchCase': 1,
+            'MemberExpression': 1,
+            'CallExpression': {
+                'arguments': 'first',
+            },
         }],
         'jsx-quotes': [1, 'prefer-single'], // Sort with JavaScript.
         'keyword-spacing': [1, { // キーワードの前後にスペースを挟む
@@ -212,6 +229,9 @@ module.exports = {
         'max-depth': [2, 10], // http://eslint.org/docs/rules/max-depth
         'max-len': [2, 256, 4, { // http://eslint.org/docs/rules/max-len
             'ignoreUrls': true,
+            'ignoreStrings': true,
+            'ignoreTemplateLiterals': true,
+            'ignoreRegExpLiterals': true,
         }],
         'max-lines': 0, // あからさまにおかしいものは普通はコードレビューで落とす. http://eslint.org/docs/rules/max-lines
         'max-nested-callback': 0, // http://eslint.org/docs/rules/max-nested-callbacks
@@ -275,7 +295,8 @@ module.exports = {
             'require': {
                 'FunctionDeclaration': true,
                 'MethodDefinition': true,
-                'ClassDeclaration': true
+                'ClassDeclaration': true,
+                'ArrowFunctionExpression': true,
             }
         }],
         'semi': [2, 'always'], // 文末セミコロンの強制
@@ -287,6 +308,7 @@ module.exports = {
         'space-before-function-paren': [1, { // http://eslint.org/docs/rules/space-before-function-parentheses
             'anonymous': 'ignore',
             'named': 'never',
+            'asyncArrow': 'ignore',
         }],
         'space-in-parens': 0,
         'space-infix-ops': 1, // 演算子の前後にスペースを挟む
@@ -333,7 +355,6 @@ module.exports = {
         'prefer-const': [1, {
             'destructuring': 'any', // どれか一つでもconstにできるならconstにするぞ
         }],
-        'prefer-reflect': 1, // 有効にしているが, 実際に使うケースで邪魔なら無効化する
         'prefer-rest-params': 1, // `arguments`の参照ではなくrest parameterの使用を推奨する
         'prefer-spread': 1, // `Function.prototype.apply`よりもspread operatorの使用を推奨する
         'prefer-template': 0,
