@@ -1,26 +1,19 @@
-// XXX: オブジェクトリテラルのキーの書き方を統一するために`quote-props`を有効にする
+// XXX: To uniform the style of an object literals, we enable `quote-props`
 /*eslint quote-props: [2, "always"] no-magic-numbers: 0 */
 
 'use strict';
 
-// ESLintにビルトインで入っているルールはここに書く
 module.exports = {
 
     // see more detail: http://eslint.org/docs/rules/
-    // ES5 strict mode準拠, バグの温床となる構文の抑制を目的に選定
-    // 0: スルー, 1: 警告, 2: エラー
-    //
-    // errorかwarnかの判断基準はこんな感じ:
-    //  * 「デバッグや開発の時にerrorになると邪魔だけど, 将来的に直す必要がある」ものはwarning
-    //  * 「アンチパターンだったり, 下手に使うと落とし穴を誘引するので, スタイルとして統一的に禁止しておきたい」ものはerror
     'rules': {
         // Possible Errors
-        'comma-dangle': [0, 'never'], // オブジェクトリテラル末尾コンマ (IE8以下サポート対象外のため許容)
+        'comma-dangle': [0, 'never'], // XXX: This rule set does not think about IE8.
         'no-cond-assign': 2, // http://eslint.org/docs/rules/no-cond-assign
         'no-console': 0, // `console`
-        'no-constant-condition': 1, // デバッグ用途のために警告に留める
+        'no-constant-condition': 1, // Use "warn" for debugging
         'no-control-regex': 2, // http://eslint.org/docs/rules/no-control-regex
-        'no-debugger': 1, // debugger文
+        'no-debugger': 1, // debugger statement
         'no-dupe-args': 2, // http://eslint.org/docs/rules/no-dupe-args
         'no-dupe-keys': 2, // オブジェクトリテラルでの重複キー
         'no-duplicate-case': 2, // http://eslint.org/docs/rules/no-duplicate-case
@@ -299,11 +292,11 @@ module.exports = {
                 'ArrowFunctionExpression': true,
             }
         }],
-        'semi': [2, 'always'], // 文末セミコロンの強制
-        'semi-spacing':[2, {
+        'semi': [2, 'always'], // Enfoce semicolon.
+        'semi-spacing':[2, { // Ban a space char before semicolon.
             'before': false,
             'after': true
-        }], // セミコロン直前の空白を禁止
+        }],
         'space-before-blocks': 0, // http://eslint.org/docs/rules/space-before-blocks
         'space-before-function-paren': [1, { // http://eslint.org/docs/rules/space-before-function-parentheses
             'anonymous': 'ignore',
@@ -313,12 +306,12 @@ module.exports = {
         'space-in-parens': 0,
         'space-infix-ops': 1, // 演算子の前後にスペースを挟む
         'space-unary-ops': [1, { // 演算子の前後にスペースを要求するか
-            'words': true, // キーワードはあったほうが見やすい
-            'nonwords': false, // `++`や`--`の前後にまでスペース強制はウザいので無効にする
+            'words': true, // It's more readable for keywords.
+            'nonwords': false, // It's very tired to enforce before/after of `++`/`--`.
         }],
         'spaced-comment': 0,
-        'sort-keys': 0, //オブジェクトのプロパティを、プロパティ名のアルファベット順に並べる必然性は感じないのでoff
-        'unicode-bom': 2, // BOMの禁止
+        'sort-keys': 0, // We don't think this is useful for all object by default.
+        'unicode-bom': 2, // Ban byte-order-mark
         'wrap-regex': 0,
 
         // ECMASctipt 6
@@ -337,12 +330,12 @@ module.exports = {
         'no-confusing-arrow': [1, { // arrow functionか不等号かややこしいのを検知
             'allowParens': true,
         }],
-        'no-const-assign': 2, // `const`への再代入を禁止する
-        'no-dupe-class-members': 2, // classのメンバ重複を検知する
+        'no-const-assign': 2, // http://eslint.org/docs/rules/no-const-assign
+        'no-dupe-class-members': 2, // http://eslint.org/docs/rules/no-dupe-class-members
         'no-duplicate-imports': 1, // http://eslint.org/docs/rules/no-duplicate-imports
-        'no-new-symbol': 2, // `Symbol`はコンストラクタじゃないよ
-        'no-restricted-imports': 0, // 今の所特になし: http://eslint.org/docs/rules/no-restricted-imports
-        'no-this-before-super': 2, //super/thisキーワードを使うよりも先に`super()`されているかの確認
+        'no-new-symbol': 2, // `Symbol` is not a constructor.
+        'no-restricted-imports': 0, // Should specified by for each projects: http://eslint.org/docs/rules/no-restricted-imports
+        'no-this-before-super': 2, // http://eslint.org/docs/rules/no-this-before-super
         'no-useless-constructor': 0, // This is a stylistic issue.
         'no-var': 1,
         'no-tabs': 2,
