@@ -21,6 +21,7 @@ module.exports = {
         'react/display-name': 0, // Auto covered by jsx transformer.
         'react/forbid-component-props': 1,
         'react/forbid-prop-types': 0,
+        'react/no-children-prop': 2, // children should be nested between the opening and closing tags.
         'react/no-danger': 2,
         'react/no-danger-with-children': 2,
         'react/no-did-mount-set-state': [1, 'disallow-in-func'],
@@ -38,6 +39,7 @@ module.exports = {
         'react/no-is-mounted': 2,
         'react/no-render-return-value': 2,
         'react/no-string-refs': 2,
+        'react/no-unescaped-entities': 2,
         'react/prefer-es6-class': 2,
         'react/prefer-stateless-function': [1, {
             'ignorePureComponents': false, // we'll reconsider this option when we begin to use `PureComponent`.
