@@ -321,7 +321,7 @@ module.exports = {
         'no-new-symbol': 2, // `Symbol`はコンストラクタじゃないよ
         'no-restricted-imports': 0, // 今の所特になし: http://eslint.org/docs/rules/no-restricted-imports
         'no-this-before-super': 2, //super/thisキーワードを使うよりも先に`super()`されているかの確認
-        // 'no-useless-constructor': 1, // 不要なconstructorは混乱の元なので減らす. FIXME: #1921
+        'no-useless-constructor': 0, // This is a stylistic issue.
         'no-var': 1,
         'no-tabs': 2,
         'no-whitespace-before-property': 2, // プロパティアクセス時に変な空白の入れ方を禁止する
