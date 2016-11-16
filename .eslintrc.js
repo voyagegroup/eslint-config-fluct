@@ -16,6 +16,10 @@ module.exports = {
         './config/eslintrc_react.js',
     ],
 
+    'plugins': [
+        'markdown',
+    ],
+
     'env': {
         'commonjs': true,
     },
