@@ -25,16 +25,18 @@
     - You can specify `master` or other branch directly. But we don't recommend it strongly.
 
 
-### 2. Import via `extends` fields in your .eslintrc
+### 2. Import via `extends` fields in your .eslintrc.js
 
 ```javascript
-{
-    "extends": [
+'use strict';
+
+module.exports = {
+    'extends': [
         './node_modules/eslint-config-fluct/config/eslintrc_core.js', // for eslint's builtin rules.
         './node_modules/eslint-config-fluct/config/eslintrc_node.js', // for eslint-plugin-react
         './node_modules/eslint-config-fluct/config/eslintrc_react.js', // for eslint-plugin-node
     ]
-}
+};
 ```
 
 - see also: [ESLint's document](http://eslint.org/docs/user-guide/configuring)
