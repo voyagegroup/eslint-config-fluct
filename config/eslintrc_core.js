@@ -246,7 +246,7 @@ module.exports = {
         'no-restricted-globals' : [2,
             //指定したグローバル変数を利用すると警告する(一般的すぎる名前を付けて意図しないグローバル変数の上書きをしないように)。必要に応じて追加していく。
             // 現状上げたのはここから http://qiita.com/mysticatea/items/cae686a8bebdfaaa5735
-           'name', 'top', 'event'
+            'name', 'top', 'event'
         ],
         'no-restricted-syntax': [2,
             // - 文字列リフレクションの温床となりうるfor-inをBAN（使いたい場合は明示的に無効化しましょう）
