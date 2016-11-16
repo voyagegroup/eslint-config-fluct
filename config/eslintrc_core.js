@@ -199,7 +199,7 @@ module.exports = {
         'indent': [2, 4, {
             'SwitchCase': 1
         }],
-        'jsx-quotes': [1, 'prefer-double'], // HTMLのquoteと合わせる
+        'jsx-quotes': [1, 'prefer-single'], // Sort with JavaScript.
         'keyword-spacing': [1, { // キーワードの前後にスペースを挟む
             'before': true,
             'after': true,
