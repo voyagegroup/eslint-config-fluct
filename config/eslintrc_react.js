@@ -20,7 +20,7 @@ module.exports = {
     'rules': {
         'react/display-name': 0, // Auto covered by jsx transformer.
         'react/forbid-component-props': 1,
-        'react/no-danger': 0, // ban `dangerouslySetInnerHTML`. But we still use it :(
+        'react/no-danger': 2,
         'react/no-danger-with-children': 2,
         'react/no-did-mount-set-state': [1, 'disallow-in-func'],
         'react/no-did-update-set-state': [1, 'disallow-in-func'],
