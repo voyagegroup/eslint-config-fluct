@@ -187,7 +187,7 @@ module.exports = {
         'comma-style': [1, 'last'], // http://eslint.org/docs/rules/comma-style
         'computed-property-spacing': [2, 'never'],
         'consistent-this': [2, 'that'], // `this`参照時の記法に一貫性を持たせる
-        'eol-last': 0, // we don't have to restrict this.
+        'eol-last': [0, 'always'], // we don't have to restrict this.
         'func-call-spacing': 2, // `fn ()`のような空白の禁止
         'func-names': 0, // we don't have to restrict this in most case.
         'func-style': [0, 'declaration', {
