@@ -136,22 +136,22 @@ module.exports = {
         'strict': [2, 'global'],
 
         // Variables
-        'init-declarations': [2, 'always'], // 変数宣言時の初期化を矯正する
+        'init-declarations': [2, 'always'],
         'no-catch-shadow': 2, // http://eslint.org/docs/rules/no-catch-shadow
-        'no-delete-var': 2, // 変数に対する`delete`の禁止. まず使わないので禁止
+        'no-delete-var': 2, // In a general case, we don't have to do this.
         'no-label-var': 2,
-        'no-shadow': 0, // 変数のshadowingの可否
+        'no-shadow': 0,
         'no-shadow-restricted-names': 2,
-        'no-undef': 2, // Bann a variables which are not defined explicitly.
-        'no-undef-init': 2, // 未初期化の変数の禁止
-        'no-undefined': 0, // `undefined`の使用禁止
-        'no-unused-vars': [1, { // 未使用変数の警告. デバッグ時に未使用変数ができてしまうことを考慮し警告に.
+        'no-undef': 2, // Ban a variables which are not defined explicitly.
+        'no-undef-init': 2,
+        'no-undefined': 0,
+        'no-unused-vars': [1, { // Not make an error for debugging.
             'vars': 'all',
             'args': 'after-used',
             'caughtErrors': 'all',
-            'caughtErrorsIgnorePattern': '^_', // `catch (_e) {...}`みたいな
+            'caughtErrorsIgnorePattern': '^_', // Allow `catch (_e) {...}`
         }],
-        'no-use-before-define': [2, { // 変数の宣言箇所より前方で使用した場合に警告. Temporary Dead Zone対策
+        'no-use-before-define': [2, { // the measure for Temporary Dead Zone
             'functions': false, //  Function declarations are hoisted.
             'classes': true, // Class declarations are not hoisted. We should warn it.
         }],
