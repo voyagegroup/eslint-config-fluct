@@ -49,6 +49,9 @@ module.exports = {
   [`parserOptions`](http://eslint.org/docs/user-guide/configuring#specifying-parser-options),
   or others as you like.
 
+#### Examples
+
+- [For web browsers which support only ES5](./example/ES5_BROWSER.md).
 
 
 ## License
