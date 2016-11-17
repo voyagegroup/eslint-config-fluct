@@ -158,16 +158,16 @@ module.exports = {
 
         // Node.js & CommonJS
         'callback-return': 0, // http://eslint.org/docs/rules/callback-return
-        'global-require': 2, // トップレベル以外での`require()`の使用を禁止
-        'no-mixed-requires': [2, { // まとめてrequire()とかしない
+        'global-require': 2,
+        'no-mixed-requires': [2, {
             'grouping': true,
         }],
-        'no-new-require': 2, // requireと同時にnewとか, まず使わないので禁止
-        'no-path-concat': 2, // パス名解決は`path`モジュールを使うようにする.
-        'no-process-env': 0, // browserifyしてるから使うこともある.
-        'no-process-exit': 0, // process.exit()を禁止するか
-        'no-restricted-modules': 0, // 今の所特になし: http://eslint.org/docs/rules/no-restricted-modules
-        'no-sync': 1, // 同期メソッドの呼び出しを警告する
+        'no-new-require': 2,
+        'no-path-concat': 2,
+        'no-process-env': 0,
+        'no-process-exit': 0,
+        'no-restricted-modules': 0, // http://eslint.org/docs/rules/no-restricted-modules
+        'no-sync': 1,
 
         // Stylistic Issues
         'array-bracket-spacing': 0, // http://eslint.org/docs/rules/array-bracket-spacing
