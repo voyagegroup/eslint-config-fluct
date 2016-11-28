@@ -128,6 +128,7 @@ module.exports = {
         'no-warning-comments': 0, // We need not always enable this : http://eslint.org/docs/rules/no-warning-comments
         'no-with': 2,
         'radix': 2, // Enforce 2nd argument of `parseInt()`.
+        'require-await': 1, // If there is no `await` in an async function, there is no reasons to make it async function.
         'vars-on-top': 0, // This is a truly ridiculous convention.
         'wrap-iife': 0, // http://eslint.org/docs/rules/wrap-iife
         'yoda': 0, // http://eslint.org/docs/rules/wrap-iife
@@ -178,6 +179,7 @@ module.exports = {
         'camelcase': [2, { // http://eslint.org/docs/rules/camelcase
             'properties': 'always',
         }],
+        'capitalized-comments': 0, // we don't think this is a serious problem.
         'comma-spacing': [2, { // http://eslint.org/docs/rules/comma-spacing
             'before': false,
             'after': true
