@@ -162,6 +162,7 @@ module.exports = {
         // Node.js & CommonJS
         'callback-return': 0, // http://eslint.org/docs/rules/callback-return
         'global-require': 2,
+        'handle-callback-err': 0, // We does not always write for nodejs.
         'no-mixed-requires': [2, {
             'grouping': true,
         }],
