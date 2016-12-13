@@ -290,6 +290,7 @@ module.exports = {
             'avoidEscape': true,
             'allowTemplateLiterals': true,
         }],
+        'quote-props': 0, // `bar-foo` without quote will be parse error if we disable this rules.
         'require-jsdoc': [0, {
             'require': {
                 'FunctionDeclaration': true,
