@@ -8,6 +8,11 @@ module.exports = {
     // see more detail: http://eslint.org/docs/rules/
     'rules': {
         // Possible Errors
+
+        // We should reconsider about this after ECMA262 introduces
+        // [async iteration](https://github.com/tc39/proposal-async-iteration),
+        // But now, we enable this.
+        'no-await-in-loop': 1,
         'no-cond-assign': 2, // http://eslint.org/docs/rules/no-cond-assign
         'no-console': 0, // `console`
         'no-constant-condition': 1, // Use "warn" for debugging
