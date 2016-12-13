@@ -283,6 +283,7 @@ module.exports = {
         'object-property-newline' : 0, // Disable to allow many properties into single line.
         'one-var': [2, 'never'], // http://eslint.org/docs/rules/one-var
         'one-var-declaration-per-line': 1, // http://eslint.org/docs/rules/one-var-declaration-per-line
+        'operator-assignment': 0, // Unlike `i++` or `++i`, this is not a problem
         'operator-linebreak': [2, 'after'],
         'padded-blocks': 0,
         'quotes': [2, 'single', {
