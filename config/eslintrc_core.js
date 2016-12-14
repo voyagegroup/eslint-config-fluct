@@ -167,6 +167,7 @@ module.exports = {
         // Node.js & CommonJS
         'callback-return': 0, // http://eslint.org/docs/rules/callback-return
         'global-require': 2,
+        'handle-callback-err': 0, // We does not always write for nodejs.
         'no-mixed-requires': [2, {
             'grouping': true,
         }],
@@ -288,12 +289,14 @@ module.exports = {
         'object-property-newline' : 0, // Disable to allow many properties into single line.
         'one-var': [2, 'never'], // http://eslint.org/docs/rules/one-var
         'one-var-declaration-per-line': 1, // http://eslint.org/docs/rules/one-var-declaration-per-line
+        'operator-assignment': 0, // Unlike `i++` or `++i`, this is not a problem
         'operator-linebreak': [2, 'after'],
         'padded-blocks': 0,
         'quotes': [2, 'single', {
             'avoidEscape': true,
             'allowTemplateLiterals': true,
         }],
+        'quote-props': 0, // `bar-foo` without quote will be parse error if we disable this rules.
         'require-jsdoc': [0, {
             'require': {
                 'FunctionDeclaration': true,
