@@ -362,6 +362,7 @@ module.exports = {
         'prefer-const': [1, {
             'destructuring': 'any', // Let's use `const` if we make one of variables `const`.
         }],
+        'prefer-destructuring': 0, // It's not always true that to prefer destructuring.
         'prefer-numeric-literals': 2, // http://eslint.org/docs/rules/prefer-numeric-literals
         'prefer-rest-params': 1, // Recommend to use rest parameter instead of `arguments`.
         'prefer-spread': 1, // Recommend to use spread operator instead of `Function.prototype.apply`.
