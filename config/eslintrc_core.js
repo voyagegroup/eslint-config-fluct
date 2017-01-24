@@ -131,6 +131,9 @@ module.exports = {
         'no-void': 2, // We live in after ES5 : http://eslint.org/docs/rules/no-void
         'no-warning-comments': 0, // We need not always enable this : http://eslint.org/docs/rules/no-warning-comments
         'no-with': 2,
+        'prefer-promise-reject-errors': [1, {
+            'allowEmptyReject': true, // Enable to create empty rejected one for compositing promises.
+        }],
         'radix': 2, // Enforce 2nd argument of `parseInt()`.
         'require-await': 1, // If there is no `await` in an async function, there is no reasons to make it async function.
         'vars-on-top': 0, // This is a truly ridiculous convention.
@@ -267,6 +270,7 @@ module.exports = {
         'no-lonely-if': 1, // http://eslint.org/docs/rules/no-lonely-if
         'no-mixed-operators': 2, // http://eslint.org/docs/rules/no-mixed-operators
         'no-mixed-spaces-and-tabs': 2,
+        'no-multi-assign': 1,
         'no-multiple-empty-lines': 0, // Empty lines somtimes means a section of a program.
         'no-negated-condition': 0, // http://eslint.org/docs/rules/no-negated-condition
         'no-nested-ternary': 2, // http://eslint.org/docs/rules/no-nested-ternary
