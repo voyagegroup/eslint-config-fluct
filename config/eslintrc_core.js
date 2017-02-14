@@ -329,6 +329,7 @@ module.exports = {
             'nonwords': false, // It's very tired to enforce before/after of `++`/`--`.
         }],
         'spaced-comment': 0,
+        'template-tag-spacing': 1,
         'unicode-bom': 2, // Ban byte-order-mark
         'wrap-regex': 0,
 
