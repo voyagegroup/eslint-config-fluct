@@ -20,6 +20,10 @@ module.exports = {
     'rules': {
         'react/display-name': 0, // Auto covered by jsx transformer.
         'react/forbid-component-props': 1,
+        'react/forbid-elements': [1, {
+            'forbid': [],
+        }],
+        'react/forbid-foreign-prop-types': 2,
         'react/forbid-prop-types': 0,
         // The index of `Array<T>` is not suitable for `key` props.
         // But this restriction does not prevent that the id for each items is just a sequence number of some list
@@ -61,6 +65,7 @@ module.exports = {
             'component': true,
             'html': false,
         }],
+        'react/void-dom-elements-no-children': 1,
 
         // We define customized rules because we thought default settings mixes with
         // component's arguments and lifecycle methods.
