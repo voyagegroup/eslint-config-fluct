@@ -135,7 +135,7 @@ module.exports = {
             'allowEmptyReject': true, // Enable to create empty rejected one for compositing promises.
         }],
         'radix': 2, // Enforce 2nd argument of `parseInt()`.
-        'require-await': 1, // If there is no `await` in an async function, there is no reasons to make it async function.
+        'require-await': 0,
         'vars-on-top': 0, // This is a truly ridiculous convention.
         'wrap-iife': 0, // http://eslint.org/docs/rules/wrap-iife
         'yoda': 0, // http://eslint.org/docs/rules/wrap-iife
