@@ -11,7 +11,7 @@ module.exports = {
 
     'settings': {
         'react': {
-            'version': '15.0', // used for 'no-deprecated' rule.
+            'version': '15.5', // used for 'no-deprecated' rule.
         }
     },
 
@@ -48,6 +48,8 @@ module.exports = {
             'customValidators': [],
             'skipShapeProps': false,
         }],
+        // We don't think this code is produced in a  common case. If you need it, let's opt out/
+        'react/no-will-update-set-state': 2,
         'react/prefer-es6-class': 2,
         'react/prefer-stateless-function': [1, {
             'ignorePureComponents': false, // we'll reconsider this option when we begin to use `PureComponent`.
@@ -133,7 +135,6 @@ module.exports = {
             'ignore': [],
         }],
         'react/jsx-sort-props': 0, // we cannot force alphabetical order to our old codebase, and this is meaningless.
-        'react/jsx-space-before-closing': 0, // We don't this is a serious problem.
         'react/jsx-tag-spacing': [1, {
             'closingSlash': 'never',
             'beforeSelfClosing': 'allow', // Allow to write more XML-ly
