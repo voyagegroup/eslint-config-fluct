@@ -9,6 +9,7 @@ before_script:
 
 node_js:
   - "6"
+  - "7"
   - "node"
 
 notifications:
