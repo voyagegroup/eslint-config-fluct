@@ -9,6 +9,7 @@ module.exports = {
     'rules': {
         // Possible Errors
 
+        'for-direction': 0, // We don't think this is "possible error".
         // We should reconsider about this after ECMA262 introduces
         // [async iteration](https://github.com/tc39/proposal-async-iteration),
         // But now, we enable this.
@@ -171,6 +172,7 @@ module.exports = {
         'callback-return': 0, // http://eslint.org/docs/rules/callback-return
         'global-require': 2,
         'handle-callback-err': 0, // We does not always write for nodejs.
+        'no-buffer-constructor': 2,
         'no-mixed-requires': [2, {
             'grouping': true,
         }],
@@ -182,7 +184,9 @@ module.exports = {
         'no-sync': 1,
 
         // Stylistic Issues
+        'array-bracket-newline ': 0,
         'array-bracket-spacing': 0, // http://eslint.org/docs/rules/array-bracket-spacing
+        'array-element-newline': 0,
         'block-spacing': 0, // http://eslint.org/docs/rules/block-spacing
         'brace-style': [0, 'stroustrup', { // http://eslint.org/docs/rules/brace-style
             'allowSingleLine': true
@@ -236,7 +240,6 @@ module.exports = {
         }],
         'linebreak-style': [2, 'unix'],
         'lines-around-comment': 0, // http://eslint.org/docs/rules/lines-around-comment
-        'lines-around-directive': 2, // http://eslint.org/docs/rules/lines-around-directive
         'line-comment-position': 0, // This is needless. http://eslint.org/docs/rules/line-comment-position
         'max-depth': [2, 10], // http://eslint.org/docs/rules/max-depth
         'max-len': [2, 256, 4, { // http://eslint.org/docs/rules/max-len
@@ -255,8 +258,6 @@ module.exports = {
         'multiline-ternary': 0, // We don't have any strong opinion about this.
         'new-cap': 1,
         'new-parens': 2,
-        'newline-after-var': 0, // http://eslint.org/docs/rules/newline-after-var
-        'newline-before-return' : 0, // It's not a problem to violate this.
         'newline-per-chained-call': [0, { // http://eslint.org/docs/rules/newline-per-chained-call
             'ignoreChainWithDepth': 4, // I don't feel this is a real problem at now...
         }],
@@ -298,6 +299,20 @@ module.exports = {
         'operator-assignment': 0, // Unlike `i++` or `++i`, this is not a problem
         'operator-linebreak': [2, 'after'],
         'padded-blocks': 0,
+        'padding-line-between-statements': [1,
+            /**
+             *  This configuration is valid the case:
+             *
+             *  ```
+             *      "use strict";
+             *      "use asm";
+             *
+             *      foo();
+             *  ```
+             */
+            { 'blankLine': 'always', 'prev': 'directive', 'next': '*' },
+            { 'blankLine': 'any', 'prev': 'directive', 'next': 'directive' },
+        ],
         'quotes': [2, 'single', {
             'avoidEscape': true,
             'allowTemplateLiterals': true,
@@ -316,6 +331,7 @@ module.exports = {
             'before': false,
             'after': true
         }],
+        'semi-style': [1, 'last'],
         'sort-keys': 0, // We don't think this is useful for all object by default.
         'sort-vars': 0, // we don't have to sort vars.
         'space-before-blocks': 0, // http://eslint.org/docs/rules/space-before-blocks
@@ -331,6 +347,10 @@ module.exports = {
             'nonwords': false, // It's very tired to enforce before/after of `++`/`--`.
         }],
         'spaced-comment': 0,
+        'switch-colon-spacing': [1, {
+            'after': true,
+            'before': false,
+        }],
         'template-tag-spacing': 1,
         'unicode-bom': 2, // Ban byte-order-mark
         'wrap-regex': 0,
