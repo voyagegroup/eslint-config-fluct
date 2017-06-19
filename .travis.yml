@@ -1,15 +1,29 @@
 sudo: false
 
+notifications:
+    email: false
+
 language: node_js
 
-install:
-  - npm install
-
-before_script:
-
 node_js:
-  - "6"
-  - "node"
+    - "6"
+    - "node"
 
-notifications:
-  email: false
+env:
+    global:
+        - PATH=$HOME/.yarn/bin:$HOME/.local/bin:$PATH
+
+# whitelist
+cache:
+    yarn: true
+    directories:
+        - $HOME/.local
+
+before_install:
+    # Use the latest yarnpkg because Travis' builtin yarn is not the latest.
+    - curl -o- -L https://yarnpkg.com/install.sh | bash
+    - which yarn # for debugging Travis
+    - echo $PATH # for debugging Travis
+
+install:
+    - yarn install
