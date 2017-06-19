@@ -58,3 +58,8 @@ module.exports = {
 
 - [The MIT License](./LICENSE.txt)
   - Original: https://opensource.org/licenses/MIT
+
+ ## Dependencies
+
+- [yarn](https://yarnpkg.com/)
+  - We uses the latest now.
