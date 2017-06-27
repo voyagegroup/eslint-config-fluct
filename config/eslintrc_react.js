@@ -18,6 +18,7 @@ module.exports = {
     // ESLint-plugin-React
     // https://github.com/yannickcr/eslint-plugin-react
     'rules': {
+        'react/default-props-match-prop-types': 1,
         'react/display-name': 0, // Auto covered by jsx transformer.
         'react/forbid-component-props': 1,
         'react/forbid-elements': [1, {
@@ -40,6 +41,7 @@ module.exports = {
         'react/no-is-mounted': 2,
         'react/no-multi-comp': 0, // Enable to define a multiple component to a single file.
         'react/no-render-return-value': 2,
+        'react/no-redundant-should-component-update': 1,
         'react/no-set-state': 1, // Recommend to use props instead of `setState()`.
         'react/no-string-refs': 2,
         'react/no-unescaped-entities': 2,
@@ -52,7 +54,7 @@ module.exports = {
         'react/no-will-update-set-state': 2,
         'react/prefer-es6-class': 2,
         'react/prefer-stateless-function': [1, {
-            'ignorePureComponents': false, // we'll reconsider this option when we begin to use `PureComponent`.
+            'ignorePureComponents': true,
         }],
         'react/prop-types': [1, {
             'skipUndeclared': false,
@@ -106,7 +108,8 @@ module.exports = {
         // JSX-specific rules
         'react/jsx-boolean-value': [2, 'always'], // Enforce to specify html's boolean type attribute.
         'react/jsx-closing-bracket-location': 0, // It doesn’t matter.
-        'react/jsx-curly-spacing': 1,
+        'react/jsx-closing-tag-location': 1,
+        'react/jsx-curly-spacing': [1, { 'children': true }],
         'react/jsx-equals-spacing': [1, 'never'],
         'react/jsx-filename-extension': [2, {
             'extensions': ['.jsx']
