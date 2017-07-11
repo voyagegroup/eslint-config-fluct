@@ -22,7 +22,7 @@
     "eslint": "^4.0.0"
   },
   "optionalDependencies": {
-    "eslint-plugin-node": "^4.2.0",
+    "eslint-plugin-node": "^5.1.0",
     "eslint-plugin-react": "^7.1.0"
   },
   "devDependencies": {
