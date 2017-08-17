@@ -18,6 +18,7 @@ module.exports = {
     // ESLint-plugin-React
     // https://github.com/yannickcr/eslint-plugin-react
     'rules': {
+        'react/boolean-prop-naming': 0, // We don't want to give special weight to `boolean`.
         'react/default-props-match-prop-types': 1,
         'react/display-name': 0, // Auto covered by jsx transformer.
         'react/forbid-component-props': 1,
@@ -44,12 +45,14 @@ module.exports = {
         'react/no-redundant-should-component-update': 1,
         'react/no-set-state': 1, // Recommend to use props instead of `setState()`.
         'react/no-string-refs': 2,
+        'react/no-typos': 0,
         'react/no-unescaped-entities': 2,
         'react/no-unknown-property': 2,
         'react/no-unused-prop-types': [0, { // XXX: Disable to avoid mis-detection
             'customValidators': [],
             'skipShapeProps': false,
         }],
+        'react/no-unused-state': 1,
         // We don't think this code is produced in a  common case. If you need it, let's opt out/
         'react/no-will-update-set-state': 2,
         'react/prefer-es6-class': 2,
