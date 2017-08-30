@@ -10,6 +10,7 @@ module.exports = {
         // Possible Errors
 
         'for-direction': 0, // We don't think this is "possible error".
+        'getter-return': 1, // https://eslint.org/docs/rules/getter-return
         // We should reconsider about this after ECMA262 introduces
         // [async iteration](https://github.com/tc39/proposal-async-iteration),
         // But now, we enable this.
