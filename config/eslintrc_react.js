@@ -11,7 +11,7 @@ module.exports = {
 
     'settings': {
         'react': {
-            'version': '15.5', // used for 'no-deprecated' rule.
+            'version': '16.0', // used for 'no-deprecated' rule.
         }
     },
 
