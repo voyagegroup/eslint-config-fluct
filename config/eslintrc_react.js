@@ -136,6 +136,7 @@ module.exports = {
         'react/jsx-no-literals': 1,
         'react/jsx-no-target-blank': 1, // see https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-no-target-blank.md
         'react/jsx-no-undef': 2,
+        'react/jsx-curly-brace-presence': [1, 'always'],
         'react/jsx-pascal-case': [2, {
             'allowAllCaps': false,
             'ignore': [],
