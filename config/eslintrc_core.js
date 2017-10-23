@@ -241,8 +241,9 @@ module.exports = {
             'after': true,
         }],
         'linebreak-style': [2, 'unix'],
-        'lines-around-comment': 0, // https://eslint.org/docs/rules/lines-around-comment
         'line-comment-position': 0, // This is needless. https://eslint.org/docs/rules/line-comment-position
+        'lines-around-comment': 0, // https://eslint.org/docs/rules/lines-around-comment
+        'lines-between-class-members': 0, // https://eslint.org/docs/rules/lines-between-class-members
         'max-depth': [2, 10], // https://eslint.org/docs/rules/max-depth
         'max-len': [2, 256, 4, { // https://eslint.org/docs/rules/max-len
             'ignoreUrls': true,
@@ -257,6 +258,7 @@ module.exports = {
         'max-statements-per-line': [1, { // https://eslint.org/docs/rules/max-statements-per-line
             'max': 1, // Basically, it's bad to place 2 statements into 1 line.
         }],
+        'multiline-comment-style': 0, // https://eslint.org/docs/rules/multiline-comment-style
         'multiline-ternary': 0, // We don't have any strong opinion about this.
         'new-cap': 1,
         'new-parens': 2,
