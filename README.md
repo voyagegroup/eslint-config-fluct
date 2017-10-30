@@ -35,8 +35,8 @@
 module.exports = {
     'extends': [
         './node_modules/eslint-config-fluct/config/eslintrc_core.js', // for eslint's builtin rules.
-        './node_modules/eslint-config-fluct/config/eslintrc_node.js', // for eslint-plugin-react
-        './node_modules/eslint-config-fluct/config/eslintrc_react.js', // for eslint-plugin-node
+        './node_modules/eslint-config-fluct/config/eslintrc_node.js', // for eslint-plugin-node
+        './node_modules/eslint-config-fluct/config/eslintrc_react.js', // for eslint-plugin-react
     ]
 };
 ```
