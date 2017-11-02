@@ -49,12 +49,6 @@ module.exports = {
             'requireReturn': true,
             'requireParamDescription': false,
             'requireReturnDescription': false,
-            //'preferType': {
-            //    'Boolean': 'boolean',
-            //    'Number': 'number',
-            //    'String': 'string',
-            //    'object': 'Object',
-            //},
         }],
         'valid-typeof': [1, {'requireStringLiterals': true}],
 
