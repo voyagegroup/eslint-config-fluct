@@ -221,6 +221,7 @@ module.exports = {
         'id-blacklist': 0, // https://eslint.org/docs/rules/id-blacklist
         'id-length': 0, // https://eslint.org/docs/rules/id-length
         'id-match': 0, // https://eslint.org/docs/rules/id-match
+        'implicit-arrow-linebreak': [2, 'beside'], // I think 'below' mode is horrible and confusable.
         'indent': [2, 4, {
             'SwitchCase': 1,
             'MemberExpression': 1,
