@@ -155,7 +155,7 @@ module.exports = {
         'no-unused-vars': [1, { // Not make an error for debugging.
             'vars': 'all',
             'args': 'after-used',
-            'argsIgnorePattern': '^_', // Sort with TypeScript compiler's builtin linter.            
+            'argsIgnorePattern': '^_', // Sort with TypeScript compiler's builtin linter.
             'caughtErrors': 'all',
             'caughtErrorsIgnorePattern': '^_', // Allow `catch (_e) {...}`
         }],
