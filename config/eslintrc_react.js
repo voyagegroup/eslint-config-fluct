@@ -19,6 +19,7 @@ module.exports = {
     // https://github.com/yannickcr/eslint-plugin-react
     'rules': {
         'react/boolean-prop-naming': 0, // We don't want to give special weight to `boolean`.
+        'react/button-has-type': 1,
         'react/default-props-match-prop-types': 1,
         'react/display-name': 0, // Auto covered by jsx transformer.
         'react/forbid-component-props': 1,
@@ -27,6 +28,7 @@ module.exports = {
         }],
         'react/forbid-foreign-prop-types': 2,
         'react/forbid-prop-types': 0,
+        'react/no-access-state-in-setstate': 1,
         // The index of `Array<T>` is not suitable for `key` props.
         // But this restriction does not prevent that the id for each items is just a sequence number of some list
         // even if a item has an "unique" id. This rule cannot prevent it. meaningless.
