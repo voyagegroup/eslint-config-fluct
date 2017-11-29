@@ -155,7 +155,7 @@ module.exports = {
         'no-unused-vars': [1, { // Not make an error for debugging.
             'vars': 'all',
             'args': 'after-used',
-            'argsIgnorePattern': '^_', // Sort with TypeScript compiler's builtin linter.            
+            'argsIgnorePattern': '^_', // Sort with TypeScript compiler's builtin linter.
             'caughtErrors': 'all',
             'caughtErrorsIgnorePattern': '^_', // Allow `catch (_e) {...}`
         }],
@@ -221,6 +221,7 @@ module.exports = {
         'id-blacklist': 0, // https://eslint.org/docs/rules/id-blacklist
         'id-length': 0, // https://eslint.org/docs/rules/id-length
         'id-match': 0, // https://eslint.org/docs/rules/id-match
+        'implicit-arrow-linebreak': [2, 'beside'], // I think 'below' mode is horrible and confusable.
         'indent': [2, 4, {
             'SwitchCase': 1,
             'MemberExpression': 1,
