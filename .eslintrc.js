@@ -16,6 +16,13 @@ module.exports = {
         './config/eslintrc_react.js',
     ],
 
+    // This option is only applied to this project
+    // (This will not be applied for an user project).
+    'parserOptions': {
+        'ecmaVersion': 6,
+        'sourceType': 'script',
+    },
+
     'plugins': [
         'markdown',
     ],
