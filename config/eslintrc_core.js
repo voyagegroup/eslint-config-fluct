@@ -54,7 +54,9 @@ module.exports = {
 
         // Best Practices
         'accessor-pairs': 0, // Allow only getter or setter to define a "read-only" or "write-only" object
-        'array-callback-return': 1, // https://eslint.org/docs/rules/array-callback-return.html
+        'array-callback-return': [1, { // https://eslint.org/docs/rules/array-callback-return.html
+            'allowImplicit': false, // Should return `undefined` explicitly
+        }],
         'block-scoped-var': 2, // https://eslint.org/docs/rules/block-scoped-var
         'class-methods-use-this': 0, // A class method does not use `this` in some case.
         'complexity': 0, // We think there is no meaning to measure it in a daily linting.
