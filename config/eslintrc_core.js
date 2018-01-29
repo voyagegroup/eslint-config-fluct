@@ -206,6 +206,7 @@ module.exports = {
                 'FunctionDeclaration': false,
                 'FunctionExpression': false,
                 'ImportDeclaration': false,
+                'NewExpression': false,
                 'ObjectPattern': false,
             },
         }],
