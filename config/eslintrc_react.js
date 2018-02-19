@@ -23,6 +23,9 @@ module.exports = {
         'react/default-props-match-prop-types': 1,
         'react/display-name': 0, // Auto covered by jsx transformer.
         'react/forbid-component-props': 1,
+        'react/forbid-dom-props': [1, {
+            'forbid': ['id'],
+        }],
         'react/forbid-elements': [1, {
             'forbid': [],
         }],
@@ -47,6 +50,7 @@ module.exports = {
         'react/no-redundant-should-component-update': 1,
         'react/no-set-state': 1, // Recommend to use props instead of `setState()`.
         'react/no-string-refs': 2,
+        'react/no-this-in-sfc': 1,
         'react/no-typos': 0,
         'react/no-unescaped-entities': 2,
         'react/no-unknown-property': 2,
@@ -112,6 +116,7 @@ module.exports = {
 
         // JSX-specific rules
         'react/jsx-boolean-value': [2, 'always'], // Enforce to specify html's boolean type attribute.
+        'react/jsx-child-element-spacing': 0,
         'react/jsx-closing-bracket-location': 0, // It doesn’t matter.
         'react/jsx-closing-tag-location': 1,
         'react/jsx-curly-spacing': [1, { 'children': true }],
@@ -143,9 +148,11 @@ module.exports = {
             'allowAllCaps': false,
             'ignore': [],
         }],
+        'react/jsx-sort-default-props': 0,
         'react/jsx-sort-props': 0, // we cannot force alphabetical order to our old codebase, and this is meaningless.
         'react/jsx-tag-spacing': [1, {
             'closingSlash': 'never',
+            'beforeClosing': 'never',
             'beforeSelfClosing': 'allow', // Allow to write more XML-ly
             'afterOpening': 'never',
         }],
