@@ -29,7 +29,9 @@ module.exports = {
         'react/forbid-elements': [1, {
             'forbid': [],
         }],
-        'react/forbid-foreign-prop-types': 2,
+        'react/forbid-foreign-prop-types': [2, {
+            'allowInPropTypes': false, // We doubt this option is really useful.
+        }],
         'react/forbid-prop-types': 0,
         'react/no-access-state-in-setstate': 1,
         // The index of `Array<T>` is not suitable for `key` props.
@@ -132,6 +134,7 @@ module.exports = {
         'react/jsx-indent': [1, 4], // Sort with core's `indent` rule.
         'react/jsx-indent-props': 0, // we cannot force alphabetical order to our old codebase, and this is not any serious problem.
         'react/jsx-key': 1,
+        'react/jsx-max-depth': 0, // We should not restrict this by default.
         'react/jsx-max-props-per-line': 0, // we don't think this is serious problem.
         'react/jsx-no-bind': [2, { // Sort to bind with this in constructor.
             'ignoreRefs': true, // we may use `refs`.
