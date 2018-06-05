@@ -126,7 +126,7 @@ module.exports = {
         'react/jsx-filename-extension': [2, {
             'extensions': ['.jsx']
         }],
-        'react/jsx-first-prop-new-line': [1, 'never'],
+        'react/jsx-first-prop-new-line': 0, // This is just stylistic issue.
         'react/jsx-handler-names': [2, {
             'eventHandlerPrefix': 'on', // There is no event handler which is diffrent from this rules (`onBarFoo`).
             'eventHandlerPropPrefix': 'on',
