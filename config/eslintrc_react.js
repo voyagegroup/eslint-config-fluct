@@ -56,6 +56,7 @@ module.exports = {
         'react/no-typos': 0,
         'react/no-unescaped-entities': 2,
         'react/no-unknown-property': 2,
+        'react/no-unsafe': 2, // We should ban an unsafe operation.
         'react/no-unused-prop-types': [0, { // XXX: Disable to avoid mis-detection
             'customValidators': [],
             'skipShapeProps': false,
