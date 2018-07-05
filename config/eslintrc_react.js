@@ -144,7 +144,9 @@ module.exports = {
         'react/jsx-no-comment-textnodes': 2,
         'react/jsx-no-duplicate-props': 2,
         'react/jsx-no-literals': 1,
-        'react/jsx-no-target-blank': 1, // see https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-no-target-blank.md
+        'react/jsx-no-target-blank': [1, { // see https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-no-target-blank.md
+            'enforceDynamicLinks': 'always',
+        }],
         'react/jsx-no-undef': 2,
         'react/jsx-curly-brace-presence': [1, 'always'],
         'react/jsx-pascal-case': [2, {
@@ -153,6 +155,7 @@ module.exports = {
         }],
         'react/jsx-sort-default-props': 0,
         'react/jsx-sort-props': 0, // we cannot force alphabetical order to our old codebase, and this is meaningless.
+        'react/jsx-props-no-multi-spaces': 1,
         'react/jsx-tag-spacing': [1, {
             'closingSlash': 'never',
             'beforeClosing': 'never',
