@@ -117,7 +117,7 @@ module.exports = {
         'no-return-await': 1, // Warn. Because this is not a serious problem which is same degree with `no-return-assign`.
         'no-script-url': 2, // Use an event handler.
         'no-self-assign': [2, { // https://eslint.org/docs/rules/no-self-assign
-            'props': false,
+            'props': true,
         }],
         'no-self-compare': 2, // https://eslint.org/docs/rules/no-self-compare
         'no-sequences': 2, // We're not doing a code golf: https://eslint.org/docs/rules/no-sequences
