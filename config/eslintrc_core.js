@@ -67,6 +67,7 @@ module.exports = {
         'dot-notation': 2, // We hate reflection by strings. It's possible error.
         'eqeqeq': [2, 'always'], // Don't use loosely equality operator.
         'guard-for-in': 0, // This is an escape hatch to enumerate all members in prototype chain.
+        'max-classes-per-file': 0, // We don't have to enable this. https://eslint.org/docs/rules/max-classes-per-file
         'no-alert': 1, // for debugging.
         'no-caller': 2, // Don't touch `arguments` in a normal code.
         'no-case-declarations': 2, // https://eslint.org/docs/rules/no-case-declarations
@@ -115,7 +116,9 @@ module.exports = {
         'no-return-assign': 2, // This is a problem for readability.
         'no-return-await': 1, // Warn. Because this is not a serious problem which is same degree with `no-return-assign`.
         'no-script-url': 2, // Use an event handler.
-        'no-self-assign': 2, // https://eslint.org/docs/rules/no-self-assign
+        'no-self-assign': [2, { // https://eslint.org/docs/rules/no-self-assign
+            'props': true,
+        }],
         'no-self-compare': 2, // https://eslint.org/docs/rules/no-self-compare
         'no-sequences': 2, // We're not doing a code golf: https://eslint.org/docs/rules/no-sequences
         'no-throw-literal': 2,
@@ -250,6 +253,7 @@ module.exports = {
             'ignoreRegExpLiterals': true,
         }],
         'max-lines': 0, // We trust our code review. https://eslint.org/docs/rules/max-lines
+        'max-lines-per-function': 0, // We trust our code review. https://eslint.org/docs/rules/max-lines-per-function
         'max-nested-callback': 0, // https://eslint.org/docs/rules/max-nested-callbacks
         'max-params': 0, // https://eslint.org/docs/rules/max-params
         'max-statements': 0, // https://eslint.org/docs/rules/max-statements
@@ -315,6 +319,7 @@ module.exports = {
             { 'blankLine': 'always', 'prev': 'directive', 'next': '*' },
             { 'blankLine': 'any', 'prev': 'directive', 'next': 'directive' },
         ],
+        'prefer-object-spread': 1, // https://eslint.org/docs/rules/prefer-object-spread
         'quotes': [2, 'single', {
             'avoidEscape': true,
             'allowTemplateLiterals': true,
