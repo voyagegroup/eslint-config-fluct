@@ -11,6 +11,7 @@ module.exports = {
 
         'for-direction': 0, // We don't think this is "possible error".
         'getter-return': 1, // https://eslint.org/docs/rules/getter-return
+        'no-async-promise-executor': 2, // https://eslint.org/docs/rules/no-async-promise-executor
         // We should reconsider about this after ECMA262 introduces
         // [async iteration](https://github.com/tc39/proposal-async-iteration),
         // But now, we enable this.
@@ -35,6 +36,7 @@ module.exports = {
         'no-inner-declarations': [2, 'functions'], // https://eslint.org/docs/rules/no-inner-declarations
         'no-invalid-regexp': 2, //https://eslint.org/docs/rules/no-invalid-regexp
         'no-irregular-whitespace': 2, // https://eslint.org/docs/rules/no-irregular-whitespace
+        'no-misleading-character-class': 2, // https://eslint.org/docs/rules/no-misleading-character-class
         'no-obj-calls': 2, // https://eslint.org/docs/rules/no-obj-calls
         'no-prototype-builtins': 2, // https://eslint.org/docs/rules/no-prototype-builtins
         'no-regex-spaces': 2, // https://eslint.org/docs/rules/no-regex-spaces
@@ -44,6 +46,14 @@ module.exports = {
         'no-unreachable': 1,
         'no-unsafe-finally': 2, // https://eslint.org/docs/rules/no-unsafe-finally
         'no-unsafe-negation': 2, // https://eslint.org/docs/rules/no-unsafe-negation
+        // This rule might be useful to detect a typical anti pattern about data race.
+        // However, it could not detect the problem if we assign a value into an interim variable
+        // because this rule only checks a syntax and ECMA262's semantics without other semantics.
+        //
+        // Data race is an essential problem of parallel/concurrent programming.
+        // Thus I doubt that detecting race condition correctly & statically is hard without introducing other semantics.
+        // So we regard this rule as meaningless actually and disable this.
+        'require-atomic-updates ': 0, // https://eslint.org/docs/rules/require-atomic-updates
         'use-isnan': 2, // Use `Number.isNaN`
         'valid-jsdoc': [2, {
             'requireReturn': true,
@@ -137,6 +147,14 @@ module.exports = {
         }],
         'radix': 2, // Enforce 2nd argument of `parseInt()`.
         'require-await': 0,
+        //  * If you write a code for an environment which does not support `RegExp`'s `u` flag (it would be legacy environment)
+        //    without any down-level code transformer, it might be better to disable this rule.
+        //  * If you supply `u` flag to regular expression, a parser can detect a syntax error of regular expression.
+        //      * `/\w{1,2/u` will be syntax error.
+        //      * `/\w{1,2/` will not be a syntax error.
+        //        But the current ESLint (5.3) does not have any rules to detect this pattern aggressively.
+        //        So we enable this rule as _error_.
+        'require-unicode-regexp': 2, // https://eslint.org/docs/rules/require-unicode-regexp
         'vars-on-top': 0, // This is a truly ridiculous convention.
         'wrap-iife': 0, // https://eslint.org/docs/rules/wrap-iife
         'yoda': 0, // https://eslint.org/docs/rules/wrap-iife
