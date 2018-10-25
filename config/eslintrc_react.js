@@ -42,8 +42,21 @@ module.exports = {
         'react/no-danger': 2,
         'react/no-danger-with-children': 2,
         'react/no-deprecated': 2, // Detect deprected styles
+
+        // By [the note by sebmarkbage](https://gist.github.com/sebmarkbage/75f0838967cd003cd7f9ab938eb1958f), "The Rules of React",
+        // React does not forbid to call `.setState()` in lifecycle methods `componentDidMount()` and `componentDidUpdate()`.
+        // But I think we should warn to not call `.setState()` in them because:
+        //
+        //  * It's easy to cause an inifinite recursive calling `.setState()` in `componentDidUpdate()` if you don't use it carefully.
+        //      * React's development mode can detect the case to call `.setState()` infinite recursively.
+        //        But it's just a runtime check, not the check statically.
+        //  * Calling `.setState()` in `componentDidMount()` causes re-render. It's might be a costly operation.
+        //
+        //  This warning is just "weak" warning for you before you write such a code.
+        //  I allow completely to "opt-out" this rule by an inline comment switch if you understand risks.
         'react/no-did-mount-set-state': [1, 'disallow-in-func'],
         'react/no-did-update-set-state': [1, 'disallow-in-func'],
+
         'react/no-direct-mutation-state': 2,
         'react/no-find-dom-node': 2, // Disallow to use `ReactDOM.findDOMNode()`.
         'react/no-is-mounted': 2,
