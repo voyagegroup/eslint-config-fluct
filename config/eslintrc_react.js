@@ -50,7 +50,7 @@ module.exports = {
         'react/no-multi-comp': 0, // Enable to define a multiple component to a single file.
         'react/no-render-return-value': 2,
         'react/no-redundant-should-component-update': 1,
-        'react/no-set-state': 1, // Recommend to use props instead of `setState()`.
+        'react/no-set-state': 0,
         'react/no-string-refs': 2,
         'react/no-this-in-sfc': 1,
         'react/no-typos': 0,
